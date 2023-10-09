@@ -26,9 +26,9 @@ if ($_POST) {
         // Affiche le resultat 
         echo "<form>
             <p><strong>Votre mot de passe :</strong> " . $data . " </p>
-            <p><strong>Nombre de caractères :</strong> " . $dataLen = strlen($data) . " </p>
+            <p><strong>Nombre de caractères :</strong> " . strlen($data) . " </p>
             <p><strong>Salté :</strong> " . $dataS . "</p>
-            <p><strong>Encrypté :</strong> " . $dataHash = password_hash($dataS, PASSWORD_DEFAULT) . " </p>
+            <p><strong>Encrypté :</strong> " . password_hash($dataS, PASSWORD_DEFAULT) . " </p>
         </form>";
     }
 }
