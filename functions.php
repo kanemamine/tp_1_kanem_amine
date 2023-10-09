@@ -24,12 +24,16 @@ if ($_POST) {
         $dataS = addSalt($data);
         
         // Affiche le resultat 
-        echo "<form>
-            <p><strong>Votre mot de passe :</strong> " . $data . " </p>
-            <p><strong>Nombre de caractères :</strong> " . strlen($data) . " </p>
-            <p><strong>Salté :</strong> " . $dataS . "</p>
-            <p><strong>Encrypté :</strong> " . password_hash($dataS, PASSWORD_DEFAULT) . " </p>
-        </form>";
+        echo '
+        <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <form style="margin-bottom: 20px;">
+                <p style="font-size: 18px;"><strong>Votre mot de passe :</strong> ' . htmlspecialchars($data) . '</p>
+                <p style="font-size: 18px;"><strong>Nombre de caractères :</strong> ' . strlen($data) . '</p>
+                <p style="font-size: 18px;"><strong>Salté :</strong> ' . htmlspecialchars($dataS) . '</p>
+                <p style="font-size: 18px;"><strong>Encrypté :</strong> ' . password_hash($dataS, PASSWORD_DEFAULT) . '</p>
+            </form>
+        </div>';
+
     }
 }
 ?>
